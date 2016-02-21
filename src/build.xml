@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project default="build" name="BranchPrediction">
+
+
+<target name="build">
+	<mkdir dir="bin"/>
+	
+	<javac srcdir="." destdir="bin" debug="true">
+	</javac>
+</target>
+
+<target name="clean">
+<delete dir="bin"/>
+<delete dir="jar"/>
+</target>
+
+
+
+<target name="make-jar" depends="build">
+        <mkdir dir="jar"/>
+        <jar destfile="jar/BranchPredictor.jar" basedir="bin">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+</target>
+
+</project>
+
+
